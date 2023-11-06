@@ -1,0 +1,95 @@
+*{margin: 0; padding: 0;}
+
+body {
+    background-color: #EDD5C2;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.menu-itens{
+    float: left;
+    background-color: #EDD5C2;
+    margin-left: 35%;
+}
+
+li{
+    display: inline-block;
+}
+
+.menu-itens a {
+    float: left;
+    color: #734E32;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 25px;
+    margin-top: 22%;
+    padding: 6px;
+    font-family: 'Cormorant Garamond', serif;
+}
+  
+  /* Change the color of links on hover */
+.menu-itens a:hover {
+    background-color: #734E32;
+    color: #EDD5C2;
+}
+
+.welcome{
+    background: url('images/section-welcome.jpg'); 
+    width: 100%;
+    height: 605px;
+    background-position: center;
+    background-size: cover;
+    margin-top: 65px;
+}
+
+.welcome-text{
+    width: 509px;
+    height: 207px;
+    background-color: #EDD5C2;
+    display: inline-block;
+    margin:10% 50% 50% 37%;
+    padding:10px;
+}
+
+.img-nav{
+    width: 50%;
+}
+
+.mall{
+    height: 650px;
+    width: 100%;
+
+}
+
+.recipes{
+    background-color: #402104;
+    height: 850px;
+    width: 100%;
+
+}
+
+.contact{
+    height: 850px;
+    width: 100%;
+
+}
+
+.end-site{
+    background-color: #402104;
+    height: 146px;
+    width: 100%;
+    
+}
+
+.end-site img{
+    width: 200px;
+    display: inline-block;
+    margin:1% 5% 5% 37%;
+    padding:10px;
+}
