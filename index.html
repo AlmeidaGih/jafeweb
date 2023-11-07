@@ -4,49 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-
-    
+    <link rel="stylesheet" type="text/css" href="slideshow.css" media="screen" />
     <title>Jafé</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.jpg"> <!--voltar aqui depois-->
 </head>
 <body>
-    <header id="menu">
-        <img src="images/banner.png" alt="Banner do site" class="center">
+    <header>
+        <img src="images/banner.png" alt="Banner do site" class="inicialLogo">
         <nav class="menu-itens">
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#loja">Loja</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#receitas">Receitas</a></li>
-                <!--<li><a href="#bag"><img src="images/bag.png" alt="Carrinho" class="img-nav"></a></li>
-                <li><a href="#user"><img src="images/user.png" alt="User" class="img-nav"></a></li> -->
+                <li><a href="index.html" class="btnNav">Início</a>
+                <li><a href="mall.html" class="btnNav">Loja</a>
+                <li><a href="contactus.html" class="btnNav">Contato</a>
+                <li><a href="recipes.html" class="btnNav">Receitas</a>
+                <li><a href="#bag" class="btnNavImg"><img src="images/cart-dark.png" alt="Carrinho" class="img-nav"></a></li>
+                <li><a href="#user" class="btnNavImg"><img src="images/user-dark.png" alt="User" class="img-nav"></a></li>
             </ul>    
         </nav>
     </header>
-    <section>
-        <div class="welcome">
-            <div class="welcome-text">
-                <h2>Bem vindo!</h2>
-                <p>Esperamos que você possa desfrutar dessa experiência, desde nossas receitas até nossa loja de grãos selecionados. Para um café saboroso e um dia quentinho.</p>
-            </div>
+    <section class="welcome-banner">
+        <div class="welcome-text">
+            <h2>Bem vindo!</h2>
+            <p>Esperamos que você possa desfrutar dessa experiência, 
+                desde nossas receitas até nossa loja de grãos selecionados. 
+                Para um café saboroso e um dia quentinho.</p>
         </div>
     </section>
 
-    <section>
-        <div class="mall">
-            <h2>Sobre</h2>
-            <p>Esta é uma página de exemplo para demonstrar as tags HTML básicas.</p>
-        </div>
+    <section class="mall">
+
     </section>
 
-    <section>
-        <div class="recipes">
-            <h2>Contato</h2>
-            <address>
-                Email: <a href="mailto:seuemail@example.com">seuemail@example.com</a><br>
-                Telefone: (123) 456-7890
-            </address>
+    <section class="recipes">
+        <h1>Sem ideia? Experimente nossas receitas!</h1>
+        <div class="numbers">
+            <h2>I</h2>
         </div>
+
+        <div class="numbers">
+            <h2>II</h2>
+        </div>
+
+        <div class="numbers">
+            <h2>III</h2>  
+        </div>
+        
+        <div class="recipe1">
+            <h2>Mocha</h2>
+            <p>Uma mistura de café com chocolate, Mocha leva esse nome originado da cidade onde estava o maior mercado de café do mundo do século 15 ao início do 18.</p>
+            <button>Receita</button>    
+        </div>
+
+        <div class="recipe2">
+            <h2>Macchiato</h2>
+            <p>Derivado da palavra "Macchio" em italiano que significa "mancha", devido a mancha que o leite deixa no topo da bebida. Muito apreciada por aqueles que prefere um sabor menos intenso.</p>   
+            <button>Receita</button>    
+        </div>
+
+        <div class="recipe3"> 
+            <h2>Irish Coffee</h2>
+            <p>Feito para aquecer os passageiros que aguardavam uma decolagem segura no aeroporto de Foynes em 1943, Joe Sheridan colocou uísque misturado ao café e deu origem ao que hoje, chamamos de Irish coffee.</p>
+            <button>Receita</button>      
+        </div>
+       
     </section>
 
     <section>
@@ -61,8 +81,8 @@
 
     <footer>
         <div class="end-site">
-            <img src="images/end-site-logo.png" alt="Logo do fim do site" class="center">
-            <p>&copy; 2023 Minha Página HTML. Todos os direitos reservados.</p>
+            <img src="images/end-site-logo.png" alt="Logo do fim do site" class="finalLogo">
+            <!--<p>&copy; 2023 Minha Página HTML. Todos os direitos reservados.</p> -->
         </div>
     </footer>
 </body>
