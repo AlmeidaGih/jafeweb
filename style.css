@@ -112,11 +112,6 @@ header li img{
 
 }
 
-.recipes div{
-   
-
-}
-
 .recipes h1{
     font-family: 'Cormorant Garamond', serif;
     font-size: 56px;
@@ -169,6 +164,97 @@ header li img{
     height: 850px;
     width: 100%;
 
+}
+
+.contact h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+    position: absolute;
+    top: 265%;
+    left: 35%;
+}
+
+.contact h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.address{
+    float: left;
+    position: absolute;
+    top: 278%;
+    left: 30%;
+    width: 250px;
+}
+
+.address p{
+    margin-top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.telephone{
+    float: left;
+    position: absolute;
+    top: 278%;
+    left: 49%;
+}
+.telephone p{
+    margin-top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.open-hours{
+    float: right;
+    position: absolute;
+    top: 278%;
+    left: 64%;
+}
+.open-hours p{
+    margin-top: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#hour1{
+    position: absolute;
+    top: 25%;
+    left: 49%;
+    float: right;
+}
+#hour2{
+    position: absolute;
+    top: 48%;
+    left: 49%;
+    float: right;
+}
+#hour3{
+    position: absolute;
+    top: 74%;
+    left: 49%;
+    float: right;
+}
+
+.maps{
+    position: absolute;
+    top: 298%;
+    left: 30%;
 }
 
 .finalLogo{
