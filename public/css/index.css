@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,300;1,400&display=swap');
+
+*{margin: 0; padding: 0;}
+
+html, body{
+    min-height: 100%;
+}
+body{
+    background-color: #EDD5C2;
+    margin: 0; padding: 0;
+}
+
+.inicialLogo{
+    width: 40%;
+    margin: auto;
+    display: block;
+}
+
+nav{
+    width:800px;
+    height: 34px;
+    margin-left: 33%;
+    list-style:none;
+    margin-top: 10px;
+}
+
+header li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header li img{
+    vertical-align: middle;
+}
+
+.btnNav{
+    padding:10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-decoration:none;
+    text-align:center;
+    vertical-align: middle;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color:#734E32;
+    transition: 0.5s;
+    font-weight: bold;
+    font-style: italic;
+}
+.btnNav:hover{
+    border:none;
+    background:#734E32;
+    color:#EDD5C2;
+}
+
+.btnNavImg{
+    padding-right: 4px;
+    text-decoration:none;
+    text-align:center;
+    vertical-align: middle;
+}
+
+.welcome-banner{
+    background-image: url(../images/section-welcome.jpg);
+    width: 100%;
+    height: 605px;
+    background-position: center;
+    background-size: cover;
+}
+
+.welcome-text{
+    background-color: #EDD5C2;
+    width: 508px;
+    height: 205px;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.welcome-text h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color:#743B1E;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.welcome-text p{
+    color: #734E32;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+.mall{
+    height: 650px;
+    width: 100%;
+
+}
+
+.recipes{
+    background-color: #402104;
+    height: 850px;
+    width: 100%;
+
+}
+
+.recipes h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color: #EDD5C2;
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+.numbers{
+    background-color: #743B1E;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    color: #EDD5C2;
+    align-items: center; 
+    justify-content: center;
+  
+}
+
+.recipe1{
+    background-color: #EDD5C2;
+    width: 320px;
+    height: 491px ;
+    margin-top: 150px;
+    margin-left: 450px;
+    float: left
+}
+
+.recipe2{
+    background-color: #EDD5C2;
+    width: 320px;
+    height: 491px ;
+    margin-top: 150px;
+    margin-left: 10px;
+    float: left;
+    
+}
+
+.recipe3{
+    background-color: #EDD5C2;
+    width: 320px;
+    height: 491px;
+    float: right;
+    margin-top: 150px;
+    margin-right: 472px;
+}
+
+.contact{
+    height: 850px;
+    width: 100%;
+
+}
+
+.contact h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+    position: absolute;
+    top: 265%;
+    left: 35%;
+}
+
+.contact h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.address{
+    float: left;
+    position: absolute;
+    top: 278%;
+    left: 30%;
+    width: 250px;
+}
+
+.address p{
+    margin-top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.telephone{
+    float: left;
+    position: absolute;
+    top: 278%;
+    left: 49%;
+}
+.telephone p{
+    margin-top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.open-hours{
+    float: right;
+    position: absolute;
+    top: 278%;
+    left: 64%;
+}
+.open-hours p{
+    margin-top: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #402104;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#hour1{
+    position: absolute;
+    top: 25%;
+    left: 49%;
+    float: right;
+}
+#hour2{
+    position: absolute;
+    top: 48%;
+    left: 49%;
+    float: right;
+}
+#hour3{
+    position: absolute;
+    top: 74%;
+    left: 49%;
+    float: right;
+}
+
+.maps{
+    position: absolute;
+    top: 298%;
+    left: 30%;
+}
+
+.finalLogo{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    display: block;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    background-color: #402104;
+    color: #FFF;
+    width: 100%;
+    height: 150px;    
+    text-align: center;
+    line-height: 100px;
+}
+
+
+/* DESIGN DOS CARD DOS PRODUTOS */
+#title{
+    position: absolute;
+    top: 102%;
+    left: 30%;
+    font-size: 56px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-style: italic;
+    color: #402104;
+}
+
+.card1 {
+    position: absolute;
+    top: 135%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    width: 360px;
+    height: 400px;
+    background: #000;
+}
+
+.card2 {
+    position: absolute;
+    top: 135%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 360px;
+    height: 400px;
+    background: #000;
+}
+
+.card3 {
+    position: absolute;
+    top: 135%;
+    left: 80%;
+    transform: translate(-50%,-50%);
+    width: 360px;
+    height: 400px;
+    background: #000;
+}
+
+.card .image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.card .image img {
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+.card:hover .image img {
+    opacity: .5;
+    transform: translateX(30%);/*100%*/
+}
+.card1 .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;/*100%*/
+    height: 100%;
+    background-image: url(../images/grao-acaia.png);
+    background-position: center;
+    background-size: cover;
+    transition: .5s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
+}
+
+.card2 .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;/*100%*/
+    height: 100%;
+    background-image: url(../images/grao-arabica.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: .5s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
+}
+
+.card3 .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;/*100%*/
+    height: 100%;
+    background-image: url(../images/grao-catuai.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: .5s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
+}
+.card:hover .details {
+    transform: perspective(2000px) rotateY(0deg);
+}
+.card .details .center {
+    padding: 20px;
+    text-align: left;
+    background: #402104;
+    width: 84%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.card .details .center h1 {
+    margin: 0;
+    padding: 0;
+    color: #EDD5C2;
+    line-height: 20px;
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card .details .center p {
+    margin: 10px 0;
+    padding: 0;
+    color: #EDD5C2;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-style: italic;
+}
+.card .details .center ul {
+    margin: 10px auto 0;
+    padding: 0;
+    display: table;
+}
+.card .details .center ul li {
+    list-style: none;
+    margin: 0 5px;
+    float: left;
+}
+.card .details .center ul li a {
+    display: block;
+    background: #402104;
+    color: #EDD5C2;
+    border: 1px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    transform: .5s;
+    transition: 0.5s;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    font-style: italic;
+    border-style: solid;
+    border-color: #EDD5C2;
+    border-width: 2px;
+}
+.card .details .center ul li a:hover {
+    background: #EDD5C2;
+    color: #402104;
+}
+
+.mall button{
+    position: absolute;
+    top: 159%;
+    left: 46%;
+    width: 160px;
+    height: 40px;
+    background: #EDD5C2;
+    border-color: #402104;
+    border-style: solid;
+    transition: 0.5s;
+    
+}
+
+.mall button a{
+    text-decoration: none;
+    color: #402104;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    transition: 0.5s;
+}
+
+.mall button:hover{
+    background: #402104;
+    border-color: #EDD5C2;
+    border-style: solid;
+    color: #EDD5C2;
+}
+.mall button a:hover{
+    color: #EDD5C2;
+}
+
+/* DESIGN DAS RECEITAS */
+
+#titleRecipes{
+    position: absolute;
+    top: 200%;
+    left: 5%;
+}
+
+.recipes button{
+    position: absolute;
+    top: 215%;
+    left: 18%;
+    width: 250px;
+    height: 80px;
+    background: #402104;
+    border-color: #EDD5C2;
+    border-style: solid;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.recipes button a{
+    color: #EDD5C2;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.recipes button:hover{
+    background: #EDD5C2;
+    color: #402104; 
+    border-style: solid;
+}
+.recipes button a:hover{
+    
+    color: #402104; 
+    
+}
+
+.gallery {
+  --s: 250px; /* control the size */
+  --g: 10px;  /* control the gap */
+  display: grid;
+  margin: calc(var(--s) + var(--g));
+  float: right;
+  position: absolute;
+  top: 175%;
+  right: 5%;
+}
+
+.gallery > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1.15;
+  object-fit: cover;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%,75% 100%,25% 100%,0 50%);
+  transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: .2s linear;
+}
+.gallery > img:hover {
+  filter: grayscale(0);
+  z-index: 1;
+  --_t: 1.2;
+}
+
+.gallery > img:nth-child(1) {--_y: calc(-100% - var(--g))}
+.gallery > img:nth-child(7) {--_y: calc( 100% + var(--g))}
+.gallery > img:nth-child(3),
+.gallery > img:nth-child(5) {--_x: calc(-75% - .87*var(--g))}
+.gallery > img:nth-child(4),
+.gallery > img:nth-child(6) {--_x: calc( 75% + .87*var(--g))}
+.gallery > img:nth-child(3),
+.gallery > img:nth-child(4) {--_y: calc(-50% - .5*var(--g))}
+.gallery > img:nth-child(5), 
+.gallery > img:nth-child(6) {--_y: calc( 50% + .5*var(--g))}

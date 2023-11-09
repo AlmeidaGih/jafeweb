@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Arquivos de Configuração Locais
+.env
+.env.local
+.env.*.local
+
+# Arquivos de Log e Dados Temporários
+logs/
+*.log
+tmp/
+
+# Arquivos de Build e Distribuição
+dist/
+build/
+
+# Arquivos de Configuração do IDE
+.vscode/
+.idea/
+
+# Arquivos de Cache
+.cache/
+
+# Arquivos de Sistemas Operacionais
+.DS_Store
+Thumbs.db
