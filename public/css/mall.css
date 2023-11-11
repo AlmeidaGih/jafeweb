@@ -10,12 +10,6 @@ body{
     margin: 0; padding: 0;
 }
 
-.inicialLogo{
-    width: 40%;
-    margin: auto;
-    display: block;
-}
-
 nav{
     width:800px;
     height: 34px;
@@ -30,33 +24,6 @@ header li{
 }
 
 header li img{
-    vertical-align: middle;
-}
-
-.btnNav{
-    padding:10px;
-    padding-right: 50px;
-    padding-left: 50px;
-    text-decoration:none;
-    text-align:center;
-    vertical-align: middle;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    color:#734E32;
-    transition: 0.5s;
-    font-weight: bold;
-    font-style: italic;
-}
-.btnNav:hover{
-    border:none;
-    background:#734E32;
-    color:#EDD5C2;
-}
-
-.btnNavImg{
-    padding-right: 4px;
-    text-decoration:none;
-    text-align:center;
     vertical-align: middle;
 }
 

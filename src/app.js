@@ -5,6 +5,10 @@ const port = 3000;
 
 app.use(express.static('public'));
 
+app.get('/header', (req, res) => {
+  res.sendFile(__dirname + '/views/header.html');
+});
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
@@ -18,6 +22,10 @@ app.get('/loja', (req, res) => {
 });
 
 app.get('/receitas', (req, res) => {
+  res.sendFile(__dirname + '/views/recipes.html');
+});
+
+app.get('/products', (req, res) => {
     conexao.query('SELECT * FROM PRODUCT', (err, resultados) => {
         if (err) {
           console.error('Erro ao executar a consulta:', err);

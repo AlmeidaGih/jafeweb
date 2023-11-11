@@ -8,7 +8,9 @@ html, body{
 body{
     background-color: #EDD5C2;
     margin: 0; padding: 0;
+    
 }
+
 
 .inicialLogo{
     width: 40%;
@@ -22,6 +24,7 @@ nav{
     margin-left: 33%;
     list-style:none;
     margin-top: 10px;
+    
 }
 
 header li{
@@ -54,10 +57,104 @@ header li img{
 }
 
 .btnNavImg{
-    padding-right: 4px;
+    padding-right: 20px;
     text-decoration:none;
     text-align:center;
     vertical-align: middle;
+}
+
+.img-nav{
+    width: 30px;
+}
+
+.btnNavImg .quantityItem{
+    
+    background: #734E32;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EDD5C2;
+    position: absolute;
+    top: 255px;
+    left: 64%;
+    right: 35%;
+    padding: 1px 5px;
+    
+}
+
+.card{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color: #8A593F;
+    height: 100vh;
+    transition: 0.5s;
+}
+.active .card{
+    left: calc(100% - 400px);
+    z-index: 2;
+}
+.active .container{
+   transform: translateX(-100px);
+}
+.card h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color:#EDD5C2;
+    
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.card .checkOut{
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut div{
+    background-color: #9A765A;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #B3907A;
+    color: #EDD5C2;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+.listCard li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
 }
 
 .welcome-banner{
@@ -119,45 +216,6 @@ header li img{
     font-weight: bold;
     font-style: italic;
 
-}
-
-.numbers{
-    background-color: #743B1E;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    color: #EDD5C2;
-    align-items: center; 
-    justify-content: center;
-  
-}
-
-.recipe1{
-    background-color: #EDD5C2;
-    width: 320px;
-    height: 491px ;
-    margin-top: 150px;
-    margin-left: 450px;
-    float: left
-}
-
-.recipe2{
-    background-color: #EDD5C2;
-    width: 320px;
-    height: 491px ;
-    margin-top: 150px;
-    margin-left: 10px;
-    float: left;
-    
-}
-
-.recipe3{
-    background-color: #EDD5C2;
-    width: 320px;
-    height: 491px;
-    float: right;
-    margin-top: 150px;
-    margin-right: 472px;
 }
 
 .contact{
@@ -298,6 +356,12 @@ footer {
     background: #000;
 }
 
+.active .card1{
+    position: absolute;
+    top: 135%;
+    left: 20%;
+}
+
 .card2 {
     position: absolute;
     top: 135%;
@@ -308,6 +372,12 @@ footer {
     background: #000;
 }
 
+.active .card2{
+    position: absolute;
+    top: 135%;
+    left: 50%;
+}
+
 .card3 {
     position: absolute;
     top: 135%;
@@ -316,6 +386,13 @@ footer {
     width: 360px;
     height: 400px;
     background: #000;
+}
+
+.active .card3{
+    position: absolute;
+    top: 135%;
+    left: 80%;
+    z-index: 1;
 }
 
 .card .image {
