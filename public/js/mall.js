@@ -6,14 +6,43 @@ window.onload = function () {
         let closeShopping = document.querySelector('.closeShopping');
         let listCard = document.querySelector('.listCard');
         let spanCart = document.querySelector('.quantityItem');
+        let userIcon = document.querySelector('#navUser');
+        let btnCancelModal = document.querySelector('.cancel');
+        let loginTitle = document.querySelector('#loginTitle');
+        let cadTitle = document.querySelector('#cadTitle');
 
         openShopping.addEventListener('click', ()=>{
             body.classList.add('active');
-        })
+        });
 
         closeShopping.addEventListener('click', ()=>{
             body.classList.remove('active');
-        })
+        });
+
+        userIcon.addEventListener('click', ()=>{
+            document.querySelector('.modal').style.display = 'block';
+            document.querySelector('#frmLogin').style.display = 'block';
+            document.querySelector('#loginTitle').style.color = '#8A593F';
+            document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
+            document.querySelector('#loginTitle').style.borderRadius = "12px 2px 2px 2px";
+        });
+
+        btnCancelModal.addEventListener('click', ()=>{
+            document.querySelector('.modal').style.display = 'none';
+        });
+
+        loginTitle.addEventListener('click', ()=>{
+            console.log("aaaaa")
+            document.querySelector('#loginTitle').style.borderRadius = "12px 2px 2px 2px";
+            document.querySelector('#frmLogin').style.display = 'block';
+            document.querySelector('#frmCad').style.display = 'none';
+        });
+
+        cadTitle.addEventListener('click', ()=>{
+            document.querySelector('#cadTitle').style.borderRadius = "12px 2px 2px 2px";
+            document.querySelector('#frmLogin').style.display = 'none';
+            document.querySelector('#frmCad').style.display = 'block';
+        });
 
         fetch('http://localhost:3000/products')
         .then(response => response.json())
@@ -47,7 +76,13 @@ window.onload = function () {
             // Código que precisa ser executado quando #seuElemento é clicado
             addToCart($(this), listCard, spanCart);
         });
-        
+
+        if ($('.card ul li').length >= 1) {
+            $("#quantBtn").find("button").on('click', function() {
+                // Código que precisa ser executado quando #seuElemento é clicado
+                changeQuantity($(this));
+            });
+        }
     });
 
     let list = document.querySelector('.list');
@@ -109,11 +144,11 @@ function addToCart(btn, listCard, spanCart){
             newDiv.innerHTML = `
                 <div><img src="images/${imagePath}"/></div>
                 <div id="textProd">${nameProd}</div>
-                <div>R$${priceProd.toLocaleString()}</div>
-                <div>
-                <button onclick="changeQuantity()">-</button>
-                <div class="count"></div>
-                <button onclick="changeQuantity()">+</button>
+                <div id="priceProd">R$${priceProd.toLocaleString()}</div>
+                <div id="quantBtn">
+                <button onclick="changeQuantity(this)">-</button>
+                <div class="count">1</div>
+                <button onclick="changeQuantity(this)">+</button>
                 </div>`;
             listCard.appendChild(newDiv);
             var totalSplit = $(".total").text().split("R$");
@@ -129,7 +164,9 @@ function addToCart(btn, listCard, spanCart){
                 var prodSemAcentuacao = nameProd[1].normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
                 if(prodSemAcentuacao == prodDiv[0]){
                     var currentQuantity = parseInt($(currentLi).find(".count").text());
+                    console.log($(currentLi).find(".count").text())
                     var newQuantity = currentQuantity + 1;
+                    console.log(newQuantity)
                     $(currentLi).find(".count").text(newQuantity);
                     var totalSplit = $(".total").text().split("R$");
                     var newTotal = parseInt(totalSplit[1]) + priceProd
@@ -152,15 +189,49 @@ function addToCart(btn, listCard, spanCart){
         newDiv.innerHTML = `
             <div><img src="images/${imagePath}"/></div>
             <div id="textProd">${nameProd}</div>
-            <div>R$${priceProd.toLocaleString()}</div>
-            <div>
-                <button onclick="changeQuantity()">-</button>
-                <div class="count">0</div>
-                <button onclick="changeQuantity()">+</button>
+            <div id="priceProd">R$${priceProd.toLocaleString()}</div>
+            <div id="quantBtn">
+                <button onclick="changeQuantity(this)">-</button>
+                <div class="count">1</div>
+                <button onclick="changeQuantity(this)">+</button>
             </div>`;
             listCard.appendChild(newDiv);
             $('.total').text(total + priceProd)
             $(spanCart).text(1)
     }
     
+}
+
+function changeQuantity(btn){
+    var operation = $(btn).text();
+    var quant = parseInt($(btn).parent().find(".count").text());
+
+    if(operation == "+"){
+        var newQuant = quant + 1;
+        $(btn).parent().find(".count").text(newQuant);
+        var totalSplit = $(".total").text().split("R$");
+        var priceProd = parseInt($(btn).closest('li').find('#priceProd').text().replace(/[^0-9.]/g, ""));
+        var newTotal = parseInt(totalSplit[1]) + priceProd
+        $('.total').text("R$" + newTotal);
+        var cartCurrent = parseInt($("body").find(".quantityItem").text());
+        var newCart = cartCurrent + 1;
+        $("body").find(".quantityItem").text(newCart);
+
+    }else{
+        if(quant == 1){
+            $(btn).closest('li').remove();
+            $('.total').text("R$");
+        }else{
+            var newQuant = quant - 1;
+            $(btn).parent().find(".count").text(newQuant);
+            var totalSplit = $(".total").text().split("R$");
+            var priceProd = parseInt($(btn).closest('li').find('#priceProd').text().replace(/[^0-9.]/g, ""));
+            var newTotal = parseInt(totalSplit[1]) - priceProd
+            $('.total').text("R$" + newTotal);
+            var cartCurrent = parseInt($("body").find(".quantityItem").text());
+            var newCart = cartCurrent - 1;
+            $("body").find(".quantityItem").text(newCart);
+        }
+        
+    }
 }
