@@ -135,6 +135,16 @@ header li img{
     background-color: #B3907A;
     color: #EDD5C2;
 }
+.listCard{
+    margin-top: 25px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px;
+    border-style: solid;
+    border-color: #EDD5C2;
+    border-width: 2px;
+}
 .listCard li{
     display: grid;
     grid-template-columns: 100px repeat(3, 1fr);
