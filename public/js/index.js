@@ -4,6 +4,12 @@ window.onload = function () {
 
         let openShopping = document.querySelector('#cartDark');
         let closeShopping = document.querySelector('.closeShopping');
+        let listCard = document.querySelector('.listCard');
+        let spanCart = document.querySelector('.quantityItem');
+        let userIcon = document.querySelector('#navUser');
+        let btnCancelModal = document.querySelector('.cancel');
+        let loginTitle = document.querySelector('#loginTitle');
+        let cadTitle = document.querySelector('#cadTitle');
 
         openShopping.addEventListener('click', ()=>{
             body.classList.add('active');
@@ -12,6 +18,45 @@ window.onload = function () {
         closeShopping.addEventListener('click', ()=>{
             body.classList.remove('active');
         })
+
+        userIcon.addEventListener('click', ()=>{
+            document.querySelector('.modal').style.display = 'block';
+            document.querySelector('.modal').style.height = '220px';
+            document.querySelector('#frmLogin').style.display = 'block';
+            document.querySelector('#frmCad').style.display = 'none';
+            document.querySelector('#loginTitle').style.color = '#8A593F';
+            document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
+            document.querySelector('#frmLogin').style.borderRadius = "2px 2px 12px 12px";
+            $('#cadTitle').css('color', '#EDD5C2');
+            $('#cadTitle').css('background-color', '#8A593F');
+        });
+
+        btnCancelModal.addEventListener('click', ()=>{
+            document.querySelector('.modal').style.display = 'none';
+        });
+
+        loginTitle.addEventListener('click', ()=>{
+            console.log("aaaaa")
+            document.querySelector('.modal').style.height = '220px';
+            document.querySelector('#frmLogin').style.borderRadius = "2px 2px 12px 12px";
+            document.querySelector('#frmLogin').style.display = 'block';
+            document.querySelector('#frmCad').style.display = 'none';
+            document.querySelector('#loginTitle').style.color = '#8A593F';
+            document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
+            $('#cadTitle').css('color', '#EDD5C2');
+            $('#cadTitle').css('background-color', '#8A593F');
+        });
+
+        cadTitle.addEventListener('click', ()=>{
+            document.querySelector('.modal').style.height = '480px';
+            document.querySelector('#frmCad').style.borderRadius = "2px 2px 2px 2px";
+            document.querySelector('#frmLogin').style.display = 'none';
+            document.querySelector('#frmCad').style.display = 'block';
+            document.querySelector('#cadTitle').style.color = '#8A593F';
+            document.querySelector('#cadTitle').style.backgroundColor = '#EDD5C2';
+            $('#loginTitle').css('color', '#EDD5C2');
+            $('#loginTitle').css('background-color', '#8A593F');
+        });
     });
 
     let list = document.querySelector('.list');

@@ -230,33 +230,19 @@ header li img{
     font-style: italic;
     text-align: center;
     font-weight: bold;
-    
-}  
-.modal .headerModal h2:hover{
-    color: #8A593F;
-    background-color: #EDD5C2;
-    padding-right: 25px;
-    padding-top: 10px;
     border-radius: 12px 2px 2px 2px;
     
-}   
+}     
 .modal .headerModal h2:nth-child(2){
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
+    padding-left: 20px;
     color:#EDD5C2;
     font-style: italic;
     text-align: center;
     font-weight: bold;
     position: absolute;
     right: 73%;
-}
-.modal .headerModal h2:nth-child(2):hover{
-    color: #8A593F;
-    background-color: #EDD5C2;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
-    border-radius: 12px 2px 2px 2px;
 }
 .modal .headerModal a{
     padding-top: 7px;
@@ -275,12 +261,90 @@ header li img{
     display: none;
     color: #8A593F;
     background-color: #EDD5C2;
-    width: 100%;
-    height: 100%;
+    width: 750px;
+    height: 170px;
+    padding-top: 15px;
+    padding-left: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
 }
 #frmCad{
     display: none;
+    color: #8A593F;
+    background-color: #EDD5C2;
+    width: 750px;
+    height: 365px;
+    padding-top: 15px;
+    padding-left: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+} 
+.seeImg{
+    position: absolute;
+    right: 55%;
+    bottom: 23%
+} 
+
+.seeImg2{
+    position: absolute;
+    right: 55%;
+    bottom: 13%
 }  
+input{
+    display: block;
+    background-color: #EDD5C2;
+    border: 2px solid #8A593F;
+    border-radius: 4px;
+    color: #8A593F;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-bottom: 5px;
+    line-height:15px;
+    width: 300px;
+}
+input:focus {
+    outline-width: 0;
+}
+#btnLogin{
+    margin-top: 10px;
+    background-color: #EDD5C2;
+    color: #8A593F;
+    border: 2px solid #8A593F;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+#btnLogin:hover{
+    background-color: #8A593F;
+    color: #EDD5C2;
+}
+#btnCad{
+    margin-top: 10px;
+    background-color: #EDD5C2;
+    color: #8A593F;
+    border: 2px solid #8A593F;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+#btnCad:hover{
+    background-color: #8A593F;
+    color: #EDD5C2;
+}
 .contentModal{
     width: 100%;
     height: 100%;

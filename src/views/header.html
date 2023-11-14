@@ -30,25 +30,25 @@
         <div class="contentModal">
           <form id="frmLogin">
             <label id="lblEmailLogin">E-mail</label>
-            <input type="email" id="txtEmailLogin" pattern=".+@example\.com" size="30" required />
+            <input type="email" id="txtEmailLogin" name="email" required />
             <label id="lblPasswordLogin">Senha</label>
             <input type="password" id="txtPasswordLogin" name="password" minlength="8" required />
+            <img src="/images/see-password.png" alt="ver a senha" class="seeImg" id="imgPassword2">
             <button id="btnLogin">Entrar</button>
           </form>
           <form id="frmCad">
             <label id="lblName">Nome</label>
-            <input type="text" id="txtName" name="name" required minlength="4" maxlength="8" size="10" />
+            <input type="text" id="txtName" name="user" required minlength="8" maxlength="90" size="60"/>
             <label id="lblEmailCad">E-mail</label>
-            <input type="email" id="txtEmailCad" pattern=".+@example\.com" size="30" required />
+            <input type="email" id="txtEmailCad" name="email" required />
             <label id="lblCellphone">Celular</label>
-            <input type="tel" id="txtCellphone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+            <input type="tel" id="txtCellphone" name="phone" maxlength="15" onkeyup="handlePhone(event)" />
             <label id="lblBirthday">Data de nascimento</label>
-            <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+            <input type="date" id="birthday" name="birthday" min="1930-01-01" max="2003-12-31" />
             <label id="lblPasswordCad">Senha</label>
-            <input type="password" id="txtPasswordCad" name="password" minlength="8" required />
-            <label id="lblPasswordCad">Confirmar senha</label>
-            <input type="password" id="txtConfirmPasswordCad" name="password" minlength="8" required />
-            <button id="btnCad">Cadastrar</button>
+            <input type="password" id="txtPasswordCad" name="passwordUser" minlength="8" required />
+            <img src="/images/see-password.png" alt="ver a senha" class="seeImg2" id="imgPassword">
+            <button type="submit" id="btnCad">Cadastrar</button>
           </form>
         </div>
 </header>

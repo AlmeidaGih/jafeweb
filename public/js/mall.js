@@ -1,4 +1,8 @@
 window.onload = function () {
+    let list = document.querySelector('.list');
+    let body = document.querySelector('body');
+    let total = document.querySelector('.total');
+    let quantity = document.querySelector('.quantity');
 
     $("#nav-placeholder").load("/header", function(){
 
@@ -10,7 +14,9 @@ window.onload = function () {
         let btnCancelModal = document.querySelector('.cancel');
         let loginTitle = document.querySelector('#loginTitle');
         let cadTitle = document.querySelector('#cadTitle');
-
+        let btnCad = document.querySelector('#btnCad');
+        let btnLogin = document.querySelector('#btnLogin');
+        
         openShopping.addEventListener('click', ()=>{
             body.classList.add('active');
         });
@@ -21,10 +27,14 @@ window.onload = function () {
 
         userIcon.addEventListener('click', ()=>{
             document.querySelector('.modal').style.display = 'block';
+            document.querySelector('.modal').style.height = '220px';
             document.querySelector('#frmLogin').style.display = 'block';
+            document.querySelector('#frmCad').style.display = 'none';
             document.querySelector('#loginTitle').style.color = '#8A593F';
             document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
-            document.querySelector('#loginTitle').style.borderRadius = "12px 2px 2px 2px";
+            document.querySelector('#frmLogin').style.borderRadius = "2px 2px 12px 12px";
+            $('#cadTitle').css('color', '#EDD5C2');
+            $('#cadTitle').css('background-color', '#8A593F');
         });
 
         btnCancelModal.addEventListener('click', ()=>{
@@ -33,15 +43,25 @@ window.onload = function () {
 
         loginTitle.addEventListener('click', ()=>{
             console.log("aaaaa")
-            document.querySelector('#loginTitle').style.borderRadius = "12px 2px 2px 2px";
+            document.querySelector('.modal').style.height = '220px';
+            document.querySelector('#frmLogin').style.borderRadius = "2px 2px 12px 12px";
             document.querySelector('#frmLogin').style.display = 'block';
             document.querySelector('#frmCad').style.display = 'none';
+            document.querySelector('#loginTitle').style.color = '#8A593F';
+            document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
+            $('#cadTitle').css('color', '#EDD5C2');
+            $('#cadTitle').css('background-color', '#8A593F');
         });
 
         cadTitle.addEventListener('click', ()=>{
-            document.querySelector('#cadTitle').style.borderRadius = "12px 2px 2px 2px";
+            document.querySelector('.modal').style.height = '416px';
+            document.querySelector('#frmCad').style.borderRadius = "2px 2px 2px 2px";
             document.querySelector('#frmLogin').style.display = 'none';
             document.querySelector('#frmCad').style.display = 'block';
+            document.querySelector('#cadTitle').style.color = '#8A593F';
+            document.querySelector('#cadTitle').style.backgroundColor = '#EDD5C2';
+            $('#loginTitle').css('color', '#EDD5C2');
+            $('#loginTitle').css('background-color', '#8A593F');
         });
 
         fetch('http://localhost:3000/products')
@@ -73,51 +93,134 @@ window.onload = function () {
         .catch(error => console.error('Erro ao obter dados:', error));
 
         $(".product-content").find("img").on('click', function() {
-            // Código que precisa ser executado quando #seuElemento é clicado
             addToCart($(this), listCard, spanCart);
         });
 
         if ($('.card ul li').length >= 1) {
             $("#quantBtn").find("button").on('click', function() {
-                // Código que precisa ser executado quando #seuElemento é clicado
                 changeQuantity($(this));
             });
         }
+
+        document.getElementById('frmCad').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var nameUser = $("#txtName").val();
+            var emailUser = $("#txtEmailCad").val();
+            var cellphoneUser = $("#txtCellphone").val();
+            var birthdayUser = $("#birthday").val();
+            var passwordUser = $("#txtPasswordCad").val();
+            
+            fetch('/cad-user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    user: nameUser,
+                    email: emailUser,
+                    cellphone: cellphoneUser,
+                    birthday: birthdayUser,
+                    password: passwordUser
+                  })
+              })
+              .then(response => {
+                if (!response.ok) {
+                    if(response.status == 400){
+                        throw new Error('400');
+                    }else{
+                        throw new Error('Erro ao inserir dados.');
+                    }
+                  
+                }
+                return response.text();
+              })
+              .then(data => {
+                console.log(data);
+                alert("Usuário inserido com sucesso!")
+                $('#frmCad input').val('');
+                document.querySelector('#frmLogin').style.display = 'block';
+                document.querySelector('#frmCad').style.display = 'none';
+                document.querySelector('#loginTitle').style.color = '#8A593F';
+                document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
+                $('#cadTitle').css('color', '#EDD5C2');
+                $('#cadTitle').css('background-color', '#8A593F');
+                document.querySelector('.modal').style.height = '220px';
+              })
+              .catch(error => {
+                console.error('Erro:', error);
+                if(error.message.includes('400') ){
+                    alert("Email já cadastrado")
+                }else{
+                    alert("Erro ao inserir usuário!")
+                }
+                
+              });
+        });
+
+        document.getElementById('frmLogin').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var emailUser = $("#txtEmailLogin").val();
+            var passwordUser = $("#txtPasswordLogin").val();
+            
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    user: emailUser,
+                    password: passwordUser
+                  })
+              })
+              .then(response => {
+                if (!response.ok) {
+                    if(response.status == 401){
+                        throw new Error('401');
+                    }else{
+                        throw new Error('Erro ao inserir dados.');
+                    }
+                  
+                }
+                return response.text();
+              })
+              .then(data => {
+                console.log(data);
+                alert("Login feito com sucesso!")
+                $('#frmLogin input').val('');
+                document.querySelector('.modal').style.display = 'none';
+              })
+              .catch(error => {
+                console.error('Erro:', error);
+                if(error.message.includes('401') ){
+                    alert("Usuário/senha incorretos!")
+                }else{
+                    alert("Erro ao realizar login!")
+                }
+                
+              });
+        });
+        
+        $("#imgPassword").mouseenter(function() {
+            $("#txtPasswordCad").attr("type", "text");
+        });
+          
+        $( "#imgPassword" ).mouseleave(function() {
+            $("#txtPasswordCad").attr("type", "password");
+        });
+
+        $("#imgPassword2").mouseenter(function() {
+            $("#txtPasswordLogin").attr("type", "text");
+        });
+          
+        $( "#imgPassword2" ).mouseleave(function() {
+            $("#txtPasswordLogin").attr("type", "password");
+        });
+        btnLogin.addEventListener('click', ()=>{
+            loginUser($(this));
+        });
     });
-
-    let list = document.querySelector('.list');
-    
-    let body = document.querySelector('body');
-    let total = document.querySelector('.total');
-    let quantity = document.querySelector('.quantity');
-
-    
-    
-
-    /*function reloadCard(){
-        listCard.innerHTML = '';
-        let count = 0;
-        let totalPrice = 0;
-        listCards.forEach((value, key)=>{
-            totalPrice = totalPrice + value.price;
-            count = count + value.quantity;
-            if(value != null){
-                let newDiv = document.createElement('li');
-                newDiv.innerHTML = `
-                    <div><img src="image/${value.image}"/></div>
-                    <div>${value.name}</div>
-                    <div>${value.price.toLocaleString()}</div>
-                    <div>
-                        <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                        <div class="count">${value.quantity}</div>
-                        <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                    </div>`;
-                    listCard.appendChild(newDiv);
-            }
-        })
-        total.innerText = totalPrice.toLocaleString();
-        quantity.innerText = count;
-    }*/
 }
 
 function addToCart(btn, listCard, spanCart){
@@ -234,4 +337,40 @@ function changeQuantity(btn){
         }
         
     }
+}
+
+function cadUser(){
+  
+    const formData = new FormData(document.querySelector("#frmCad"));
+    fetch('/cad-user', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao inserir dados.');
+        }
+        return response.text();
+      })
+      .then(data => {
+        console.log(data);
+        alert("Usuário inserido com sucesso, logue ao lado!")
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        alert("Erro ao inserir usuário!")
+      });
+}
+
+const handlePhone = (event) => {
+    let input = event.target
+    input.value = phoneMask(input.value)
+}
+  
+const phoneMask = (value) => {
+    if (!value) return ""
+    value = value.replace(/\D/g,'')
+    value = value.replace(/(\d{2})(\d)/,"($1) $2")
+    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+    return value
 }
