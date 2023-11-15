@@ -26,15 +26,27 @@ window.onload = function () {
         });
 
         userIcon.addEventListener('click', ()=>{
-            document.querySelector('.modal').style.display = 'block';
-            document.querySelector('.modal').style.height = '220px';
-            document.querySelector('#frmLogin').style.display = 'block';
-            document.querySelector('#frmCad').style.display = 'none';
-            document.querySelector('#loginTitle').style.color = '#8A593F';
-            document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
-            document.querySelector('#frmLogin').style.borderRadius = "2px 2px 12px 12px";
-            $('#cadTitle').css('color', '#EDD5C2');
-            $('#cadTitle').css('background-color', '#8A593F');
+            const userId = sessionStorage.getItem('userID');
+            console.log(userId)
+            if(userId > 0){
+                if($('#menuuser').css('display') == 'block'){
+                    document.querySelector('#menuuser').style.display = 'none';
+                }else{
+                    document.querySelector('#menuuser').style.display = 'block';
+                }
+                
+            }else{
+                document.querySelector('.modal').style.display = 'block';
+                document.querySelector('.modal').style.height = '220px';
+                document.querySelector('#frmLogin').style.display = 'block';
+                document.querySelector('#frmCad').style.display = 'none';
+                document.querySelector('#loginTitle').style.color = '#8A593F';
+                document.querySelector('#loginTitle').style.backgroundColor = '#EDD5C2';
+                document.querySelector('#frmLogin').style.borderRadius = "2px 2px 12px 12px";
+                $('#cadTitle').css('color', '#EDD5C2');
+                $('#cadTitle').css('background-color', '#8A593F');
+            }
+            
         });
 
         btnCancelModal.addEventListener('click', ()=>{
@@ -174,19 +186,10 @@ window.onload = function () {
                     password: passwordUser
                   })
               })
-              .then(response => {
-                if (!response.ok) {
-                    if(response.status == 401){
-                        throw new Error('401');
-                    }else{
-                        throw new Error('Erro ao inserir dados.');
-                    }
-                  
-                }
-                return response.text();
-              })
+              .then(response => response.json())
               .then(data => {
-                console.log(data);
+                
+                sessionStorage.setItem('userID', data[0].FK_ID_CUSTOMER);
                 alert("Login feito com sucesso!")
                 $('#frmLogin input').val('');
                 document.querySelector('.modal').style.display = 'none';
@@ -216,9 +219,6 @@ window.onload = function () {
           
         $( "#imgPassword2" ).mouseleave(function() {
             $("#txtPasswordLogin").attr("type", "password");
-        });
-        btnLogin.addEventListener('click', ()=>{
-            loginUser($(this));
         });
     });
 }
@@ -337,29 +337,6 @@ function changeQuantity(btn){
         }
         
     }
-}
-
-function cadUser(){
-  
-    const formData = new FormData(document.querySelector("#frmCad"));
-    fetch('/cad-user', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Erro ao inserir dados.');
-        }
-        return response.text();
-      })
-      .then(data => {
-        console.log(data);
-        alert("Usuário inserido com sucesso, logue ao lado!")
-      })
-      .catch(error => {
-        console.error('Erro:', error);
-        alert("Erro ao inserir usuário!")
-      });
 }
 
 const handlePhone = (event) => {

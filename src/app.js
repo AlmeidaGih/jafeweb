@@ -89,7 +89,7 @@ app.post('/login', (req, res) => {
 
   const {user, password } = req.body;
 
-  const verificarEmail = `SELECT ID_LOGIN FROM LOGIN WHERE USER_LOGIN = ? AND PASSWORD_LOGIN = ?`;
+  const verificarEmail = `SELECT FK_ID_CUSTOMER FROM LOGIN WHERE USER_LOGIN = ? AND PASSWORD_LOGIN = ?`;
   conexao.query(verificarEmail, [user, password], (err, result) => {
     if (err) {
       console.error('Erro ao fazer login:', err);
@@ -98,7 +98,7 @@ app.post('/login', (req, res) => {
     }
 
     if(result.length > 0){
-      res.status(200).send('Login efetuado com sucesso!');
+      res.json(result);
     }else{
       res.status(401).send('Não foi possível encontrar usuário!')
     }
